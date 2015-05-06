@@ -26,7 +26,7 @@
 @end
 
 
-@protocol MPGTextFieldDelegate <NSObject>
+@protocol AFAutoCompleteDelegate <NSObject>
 
 @optional
 

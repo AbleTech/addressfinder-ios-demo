@@ -69,16 +69,18 @@
             [self.mapView addAnnotation:annotation];
             
             [self.mapView setRegion:viewRegion animated:YES];
-            
-            self.postalLine1.hidden = FALSE;
-            self.postalLine2.hidden = FALSE;
-            self.postalLine3.hidden = FALSE;
-            self.meshblock.hidden = FALSE;
-            self.mapView.hidden = FALSE;
+            [self toggleFieldsHidden:false];
         });
     });
+}
 
-    
+-(void)toggleFieldsHidden:(BOOL)hidden
+{
+    self.postalLine1.hidden = hidden;
+    self.postalLine2.hidden = hidden;
+    self.postalLine3.hidden = hidden;
+    self.meshblock.hidden = hidden;
+    self.mapView.hidden = hidden;
 }
 
 - (NSDictionary *)getAFAddressInfo:(NSString *)pxid

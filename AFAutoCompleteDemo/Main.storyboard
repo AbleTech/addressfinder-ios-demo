@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To get started, start typing an address in the field below." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NU5-om-HG4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To get started, start typing an address in the field below." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NU5-om-HG4">
                                 <rect key="frame" x="16" y="142" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,35 +29,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="abletech_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="IbD-e8-pdu">
+                                <rect key="frame" x="244" y="545" width="113" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="84o-tP-wSc"/>
+                                    <constraint firstAttribute="width" secondItem="IbD-e8-pdu" secondAttribute="height" multiplier="173:67" id="c1Q-eD-GF5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="address_finder_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-iz-QDs">
+                                <rect key="frame" x="16" y="28" width="568" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fho-iz-QDs" secondAttribute="height" multiplier="284:57" id="iZd-ZT-igz"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Made with ❤️ by " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7E-m3-T6U">
-                                <rect key="frame" x="83" y="499" width="434" height="21"/>
+                                <rect key="frame" x="83" y="536" width="434" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abletech_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="IbD-e8-pdu">
-                                <rect key="frame" x="214" y="513" width="173" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="84o-tP-wSc"/>
-                                    <constraint firstAttribute="width" secondItem="IbD-e8-pdu" secondAttribute="height" multiplier="173:67" id="c1Q-eD-GF5"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Fho-iz-QDs" firstAttribute="trailing" secondItem="IT7-Lk-Nce" secondAttribute="trailingMargin" id="2QO-cP-fU7"/>
+                            <constraint firstItem="Fho-iz-QDs" firstAttribute="leading" secondItem="IT7-Lk-Nce" secondAttribute="leadingMargin" id="2Rf-tJ-IpT"/>
                             <constraint firstAttribute="centerX" secondItem="NU5-om-HG4" secondAttribute="centerX" id="7Vu-za-cbT"/>
-                            <constraint firstAttribute="bottom" secondItem="IbD-e8-pdu" secondAttribute="bottom" constant="20" id="Agp-yR-jCW"/>
+                            <constraint firstAttribute="bottom" secondItem="IbD-e8-pdu" secondAttribute="bottom" constant="10" id="Agp-yR-jCW"/>
                             <constraint firstItem="Lbt-h6-k0h" firstAttribute="trailing" secondItem="IT7-Lk-Nce" secondAttribute="trailingMargin" id="Bga-oF-pJ2"/>
-                            <constraint firstItem="oYQ-3n-TpZ" firstAttribute="top" secondItem="t7E-m3-T6U" secondAttribute="bottom" constant="80" id="FIQ-to-ihf"/>
+                            <constraint firstItem="oYQ-3n-TpZ" firstAttribute="top" secondItem="t7E-m3-T6U" secondAttribute="bottom" constant="50" id="FIQ-to-ihf"/>
                             <constraint firstItem="NU5-om-HG4" firstAttribute="leading" secondItem="IT7-Lk-Nce" secondAttribute="leadingMargin" id="FbJ-dI-uEc"/>
                             <constraint firstItem="NU5-om-HG4" firstAttribute="trailing" secondItem="IT7-Lk-Nce" secondAttribute="trailingMargin" id="Neo-sA-2x5"/>
                             <constraint firstItem="t7E-m3-T6U" firstAttribute="leading" secondItem="IT7-Lk-Nce" secondAttribute="leadingMargin" constant="67" id="Rsv-Ui-8J1"/>
                             <constraint firstItem="Lbt-h6-k0h" firstAttribute="top" secondItem="IT7-Lk-Nce" secondAttribute="topMargin" constant="170" id="X9c-ND-44g"/>
                             <constraint firstItem="Lbt-h6-k0h" firstAttribute="top" secondItem="NU5-om-HG4" secondAttribute="bottom" constant="7" id="ZPP-Ig-vbK"/>
                             <constraint firstAttribute="centerX" secondItem="IbD-e8-pdu" secondAttribute="centerX" constant="-0.5" id="aU8-BO-Caw"/>
-                            <constraint firstItem="oYQ-3n-TpZ" firstAttribute="top" secondItem="IbD-e8-pdu" secondAttribute="bottom" constant="20" id="f6L-dg-rTQ"/>
+                            <constraint firstItem="oYQ-3n-TpZ" firstAttribute="top" secondItem="IbD-e8-pdu" secondAttribute="bottom" constant="10" id="f6L-dg-rTQ"/>
                             <constraint firstItem="Lbt-h6-k0h" firstAttribute="leading" secondItem="IT7-Lk-Nce" secondAttribute="leadingMargin" id="g9Q-zd-Cia"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t7E-m3-T6U" secondAttribute="trailing" constant="67" id="gd9-th-iPV"/>
+                            <constraint firstItem="NU5-om-HG4" firstAttribute="top" secondItem="Fho-iz-QDs" secondAttribute="bottom" constant="8" id="jsE-LE-Ibr"/>
+                            <constraint firstItem="Fho-iz-QDs" firstAttribute="top" secondItem="ybv-nQ-Nvy" secondAttribute="bottom" constant="8" id="nuf-Ix-krB"/>
                         </constraints>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
@@ -77,5 +87,6 @@
     </scenes>
     <resources>
         <image name="abletech_logo.png" width="1200" height="355"/>
+        <image name="address_finder_logo.png" width="2200" height="221"/>
     </resources>
 </document>

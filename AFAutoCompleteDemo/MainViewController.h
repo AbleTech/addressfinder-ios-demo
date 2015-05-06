@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFAutoComplete.h"
 
-@interface MainViewController : UIViewController
-
+@interface MainViewController : UIViewController <AFAutoCompleteDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet AFAutoComplete *afTextField;
 @end

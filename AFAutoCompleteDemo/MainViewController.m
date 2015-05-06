@@ -40,4 +40,13 @@
 }
 */
 
+- (void)textField:(AFAutoComplete *)textField didEndEditingWithSelection:(NSDictionary *)result {
+    // Here you are provided with a dictionary that contains:
+    // the full address
+    // the pxid of the adddress
+    
+    // An example of future use could be to call the AddressFinder Address Info API to receive address line data,
+    // or x & y coordinates etc. https://addressfinder.nz/docs/address_info_api/
+    
+}
 @end

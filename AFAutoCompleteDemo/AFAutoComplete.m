@@ -15,6 +15,7 @@ UITableViewController *results;
 UITableViewController *tableViewController;
 NSString *afKey;
 NSString *afSecret;
+NSString *pxid;
 
 //Private declaration of NSArray that will hold the data supplied by the user for showing results in search popover.
 NSArray *data;
@@ -51,7 +52,7 @@ NSArray *data;
 - (void)reloadData
 {
     if (self.text.length > 0 && self.isFirstResponder) {
-        //User entered some text in the textfield. Check if the delegate has implemented the required method of the protocol. Create a popover and show it around the MPGTextField.
+        //User entered some text in the textfield. Check if the delegate has implemented the required method of the protocol. Create a popover and show it around the AFAutoComplete.
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             // Background work
@@ -130,6 +131,16 @@ NSArray *data;
 - (void)handleExit
 {
     [tableViewController.tableView removeFromSuperview];
+    if (self.text.length > 0){
+        //Make sure that delegate method is not called if no text is present in the text field.
+        if ([[self delegate] respondsToSelector:@selector(textField:didEndEditingWithSelection:)]) {
+            [[self delegate] textField:self didEndEditingWithSelection:[NSDictionary dictionaryWithObjectsAndKeys:self.text,@"address",pxid,@"pxid", nil]];
+        }
+        else{
+            NSLog(@"<AFAutoComplete> WARNING: You have not implemented a method from AFAutoCompleteDelegate that is called back when the user selects a search suggestion.");
+        }
+    }
+
 }
 
 
@@ -165,7 +176,7 @@ NSArray *data;
     [cell setBackgroundColor:[UIColor clearColor]];
     [[cell textLabel] setText:[dataForRowAtIndexPath objectForKey:@"DisplayText"]];
     if ([dataForRowAtIndexPath objectForKey:@"DisplaySubText"] != nil) {
-        [[cell detailTextLabel] setText:[dataForRowAtIndexPath objectForKey:@"DisplaySubText"]];
+//        [[cell detailTextLabel] setText:[dataForRowAtIndexPath objectForKey:@"DisplaySubText"]];
     }
     
     return cell;
@@ -174,6 +185,7 @@ NSArray *data;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.text = [[data objectAtIndex:indexPath.row] objectForKey:@"DisplayText"];
+    pxid = [[data objectAtIndex:indexPath.row] objectForKey:@"DisplaySubText"];
     [self resignFirstResponder];
 }
 
@@ -181,6 +193,8 @@ NSArray *data;
 
 - (void)provideSuggestions
 {
+    // Reset pxid to nil
+    pxid = nil;
     //Providing suggestions
     if (tableViewController.tableView.superview == nil && [data count] > 0) {
         //Add a tap gesture recogniser to dismiss the suggestions view when the user taps outside the suggestions view

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E3E1B761AF981CE00345E38 /* abletech_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E1B751AF981CE00345E38 /* abletech_logo.png */; };
 		6E3E1B7B1AF9BFE500345E38 /* address_finder_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E1B7A1AF9BFE500345E38 /* address_finder_logo.png */; };
+		6EE25CF41AF9D367002F8987 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE25CF31AF9D367002F8987 /* MapKit.framework */; };
 		6EF47DE31AF872E600883B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF47DE21AF872E600883B05 /* main.m */; };
 		6EF47DE61AF872E600883B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF47DE51AF872E600883B05 /* AppDelegate.m */; };
 		6EF47DE81AF872E600883B05 /* AFAutoCompleteDemo-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 6EF47DE71AF872E600883B05 /* AFAutoCompleteDemo-Prefix.pch */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		6E3E1B751AF981CE00345E38 /* abletech_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abletech_logo.png; sourceTree = "<group>"; };
 		6E3E1B7A1AF9BFE500345E38 /* address_finder_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address_finder_logo.png; sourceTree = "<group>"; };
+		6EE25CF31AF9D367002F8987 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6EF47DDD1AF872E600883B05 /* AFAutoCompleteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFAutoCompleteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF47DE11AF872E600883B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF47DE21AF872E600883B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE25CF41AF9D367002F8987 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 		6EF47DD41AF872E600883B05 = {
 			isa = PBXGroup;
 			children = (
+				6EE25CF31AF9D367002F8987 /* MapKit.framework */,
 				6EF47DDF1AF872E600883B05 /* AFAutoCompleteDemo */,
 				6EF47DF51AF872E600883B05 /* AFAutoCompleteDemoTests */,
 				6EF47DDE1AF872E600883B05 /* Products */,

@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     [self.afTextField setDelegate:self];
     [self setNeedsStatusBarAppearanceUpdate];
-    // Do any additional setup after loading the view.
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -57,12 +57,24 @@
             self.postalLine1.text = [addressData objectForKey:@"postal_line_1"];
             self.postalLine2.text = [addressData objectForKey:@"postal_line_2"];
             self.postalLine3.text = [addressData objectForKey:@"postal_line_3"];
-            self.meshblock.text = [addressData objectForKey:@"meshblock"];
+            self.meshblock.text = [NSString stringWithFormat:@"Meshblock: %@", [addressData objectForKey:@"meshblock"]];
+            
+            CLLocationCoordinate2D coordinates;
+            coordinates.latitude = [[addressData objectForKey:@"y"] doubleValue];
+            coordinates.longitude = [[addressData objectForKey:@"x"] doubleValue];
+            MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinates, 750, 750);
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setCoordinate:coordinates];
+            [self.mapView addAnnotation:annotation];
+            
+            [self.mapView setRegion:viewRegion animated:YES];
             
             self.postalLine1.hidden = FALSE;
             self.postalLine2.hidden = FALSE;
             self.postalLine3.hidden = FALSE;
             self.meshblock.hidden = FALSE;
+            self.mapView.hidden = FALSE;
         });
     });
 

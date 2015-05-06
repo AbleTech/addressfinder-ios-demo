@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "AFAutoComplete.h"
 
 @interface MainViewController : UIViewController <AFAutoCompleteDelegate, UITextFieldDelegate>
@@ -16,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *postalLine2;
 @property (weak, nonatomic) IBOutlet UILabel *postalLine3;
 @property (weak, nonatomic) IBOutlet UILabel *meshblock;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end

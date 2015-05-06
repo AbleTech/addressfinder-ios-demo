@@ -245,7 +245,7 @@ NSArray *data;
 
 - (void)tapped:(UIGestureRecognizer *)gesture
 {
-    
+    [super resignFirstResponder];
 }
 
 

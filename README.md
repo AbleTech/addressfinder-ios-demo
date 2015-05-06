@@ -11,6 +11,8 @@ A demo application is included in the `AFAutoCompleteDemo` folder.
 
 The demo application should now work providing you have added your AddressFinder credentials to the .plist.
 
+![Screenshot](http://i.imgur.com/qQIiZxk.png)
+
 ## Adding AddressFinder to your own application
 Adding AddressFinder to your own application is an easy task. Here we have provided `AFAutoComplete` for you to use in your own iOS projects.
 You can simply add a `UITextField` to your View, and change the class to `AFAutoComplete`.
